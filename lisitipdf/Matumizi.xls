@@ -1,0 +1,25 @@
+
+	<table border="1" cellspacing="0" cellpadding="0" style="width:100%;">
+		<tr>
+			<th>#</th>
+			<th>Gharama Matumizi</th>
+			<th>Lengo</th>
+			<th>Tukio/ Kikao</th>
+			<th>Tarehe</th>
+		</tr>
+
+		<tr><tr>
+				<td>1</td>
+				<td><center>100000</center></td>
+				<td>MANUAL WORKS</td>
+				<td>KUTEMBELEA WATOTO YATIMA</td>
+				<td><center>2025-03-10</center></td>
+			</tr>
+		</tr>
+
+		<tr>
+			<td colspan="1"><center>Jumla Kuu</center></td>
+			<td><center>100,000</center></td>
+		</tr>
+	</table>
+	
