@@ -16,159 +16,68 @@ if(isset($_GET["p"]))
     {
         $main_content="pages/dashboard.php";    
     }
-    elseif($page=="members" && isset($_SESSION['userName']))
+    elseif($page=="usermanagement" && isset($_SESSION['userName']))
     {
-        $main_content="pages/members.php";    
+        $main_content="pages/usermanagement.php";    
     }
-    elseif($page=="ada" && isset($_SESSION['userName']))
+    elseif($page=="cleanlinessAndSupervision" && isset($_SESSION['userName']))
     {
-        $main_content="pages/ada.php";    
+        $main_content="pages/cleanlinessAndSupervision.php";    
     }
-    elseif($page=="mfukowaMaendeleo" && isset($_SESSION['userName']))
+    elseif($page=="submitedReport" && isset($_SESSION['userName']))
     {
-        $main_content="pages/mfukowaMaendeleo.php";    
+        $main_content="pages/submitedReport.php";    
     }
-    elseif($page=="lipiaada" && isset($_SESSION['userName']))
+    elseif($page=="selectTrain" && isset($_SESSION['userName']))
     {
-        $main_content="pages/lipiaada.php";    
+        $main_content="pages/trainAndCoachesSelection.php";    
     }
-    elseif($page=="lipishaada" && isset($_SESSION['userName']))
+    elseif($page=="supervisionForm" && isset($_SESSION['userName']))
     {
-        $main_content="pages/lipishaada.php";    
+        $main_content="pages/supervisionForm.php";    
     }
-    elseif($page=="lipiamfuko" && isset($_SESSION['userName']))
+    elseif($page=="claimAndComments" && isset($_SESSION['userName']))
     {
-        $main_content="pages/lipiamfuko.php";    
-    }
-    elseif($page=="lipishamfuko" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/lipishamfuko.php";    
-    }
-    elseif($page=="register" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/register.php";    
-    }
-    elseif($page=="AdafinancialYearSelection" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/AdafinancialYearSelection.php";    
-    }
-    elseif($page=="MfukofinancialYearSelection" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/MfukofinancialYearSelection.php";    
-    }
-    elseif($page=="mikopo" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/mikopo.php";    
-    }
-    elseif($page=="mikopohai" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/mikopohai.php";    
-    }
-    elseif($page=="mikopoiliyomalizika" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/mikopoiliyomalizika.php";    
-    }
-    elseif($page=="miradi" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/miradi.php";    
-    }
-    elseif($page=="miradidetails" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/miradidetails.php";    
-    }
-    elseif($page=="mashartiMkopo" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/mashartiMkopo.php";    
+        $main_content="pages/claimAndComments.php";    
     }
     elseif($page=="personalprofile" && isset($_SESSION['userName']))
     {
-        $main_content="pages/personalprofile.php";    
-    }
-    elseif($page=="thibitishamalipo" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/thibitishaMalipo.php";    
-    }
-    elseif($page=="thibitishamalipoMfuko" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/thibitishaMalipoMfuko.php";    
-    }
-    elseif($page=="AdaLisitiPreview" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/adaLisitiPreview.php";    
-    }
-    elseif($page=="mfukoLisitiPreview" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/mfukoLisitiPreview.php";    
+        $main_content="pages/personalProfile.php";    
     }
     elseif($page=="miradiLisitiPreview" && isset($_SESSION['userName']))
     {
         $main_content="pages/miradiLisitiPreview.php";    
     }
-    elseif($page=="miradiNyarakaPreview" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/miradiNyarakaPreview.php";    
-    }
-    elseif($page=="malipoAdaKataliwa" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/malipoAdaKataliwa.php";    
-    }
-    elseif($page=="malipoMfukoKataliwa" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/malipoMfukoKataliwa.php";    
-    }
-    elseif($page=="nukuuyavikao" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/nukuuyavikao.php";    
-    }
-    elseif($page=="nukuuyavikaoForm" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/nukuuyavikaoForm.php";    
-    }
     elseif($page=="report" && isset($_SESSION['userName']))
     {
         $main_content="pages/report.php";    
     }
-    elseif($page=="michangoAdaReport" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/michangoAdaReport.php";    
-    }
-    elseif($page=="viongozi" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/viongozi.php";    
-    }
-    elseif($page=="editMember" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/editMember.php";    
-    }
-    elseif($page=="wasifuwangu" && isset($_SESSION['userName']))
-    {
-        $main_content="pages/wasifuwangu.php";    
-    }
+
     // LOGIN PAGE
 	elseif($page=="logincheck")
     {
        $username=$_POST['username'];
 	   $password=$_POST['password'];
 
-       $sql = "SELECT * FROM members WHERE login_name = '$username'";
+       $sql = "SELECT * FROM supervisors WHERE username = '$username'";
 		$result = $connect->query($sql);
 
 		if($result->num_rows == 1) {
 			$password = md5($password);
 			// exists
-			$mainSql = "SELECT * FROM members WHERE login_name = '$username' AND password = '$password'";
+			$mainSql = "SELECT * FROM supervisors WHERE username = '$username' AND password = '$password'";
 			$mainResult = $connect->query($mainSql);
 
 			if($mainResult->num_rows == 1) {
 				$value = $mainResult->fetch_assoc();
-				$user_id = $value['user_id'];
-				$user_name = $value['login_name'];
-				$previlege = $value['previlege'];
+				$user_id = $value['supervisor_id'];
+				$user_name = $value['username'];
+                $jobTitle = $value['jobTitle'];
 
 				// set session
 				$_SESSION['userId'] = $user_id;
 				$_SESSION['userName'] = $user_name;
-				$_SESSION['previlege'] = $previlege;
+                $_SESSION['jobTitle'] = $jobTitle;
 
 				header("location: index.php?p=dashboard");
             }else
@@ -184,61 +93,50 @@ if(isset($_GET["p"]))
     //END LOGIN PANEL
 
     //START REGISTRATION PANEL
-    elseif($page=="addnewmembersubmit")
+    elseif($page=="addNewUserSubmit")
     {
         
-                if(isset($_POST['memberregister']))
+                if(isset($_POST['userBtn']))
                 {    
-                  $row;
-                  $folder ="passports/";
-                  $firstname =$_POST['firstName'];
-                  $middlename =$_POST['middleName'];
-                  $lastname =$_POST['lastName'];
-                  $dob =$_POST['birthdayDate'];
+                  $firstname =$_POST['fname'];
+                  $middlename =$_POST['mname'];
+                  $lastname =$_POST['sname'];
                   $gender =$_POST['gender'];
-                  $nida =$_POST['Nida'];
-                  $address =$_POST['Address'];  
-                  $phone =$_POST['phoneNumber']; 
-                  $email =$_POST['emailAddress']; 
-                  $Akaunti =$_POST['Akaunti']; 
-                  $Akaunti2 =$_POST['Akaunti2']; 
-                  $username =$_POST['emailAddress']; 
-                  $password =md5($_POST['lastName']); 
-                  $previlege =$_POST['Previlege'];  
-                  $passport =$_FILES["passport"]["name"];   
-                  $temppassport =$_FILES["passport"]["tmp_name"];
+                  $dob =$_POST['dob'];
+                  $email =$_POST['email'];
+                  $contact =$_POST['contact'];  
+                  $station =$_POST['station']; 
+                  $jobtitle =$_POST['jobtitle'];  
+                  $username =$_POST['email']; 
+                  $password =md5('Tanrail');   
 
-                        $sql = "INSERT INTO members(fname, mname, lname, bday, gender, nida, login_name, password, address, contact, email, akaunti_benki, akaunti2, previlege, passport)
+                        $sql = "INSERT INTO supervisors(fname, lname, sname, gender, dob, email, contact, username, password, station, jobTitle)
                                             VALUES (
-                                                    '{$_POST['firstName']}',
-                                                    '{$_POST['middleName']}',
-                                                    '{$_POST['lastName']}',
-                                                    '{$_POST['birthdayDate']}',
+                                                    '{$_POST['fname']}',
+                                                    '{$_POST['mname']}',
+                                                    '{$_POST['sname']}',
                                                     '{$_POST['gender']}',
-                                                    '{$_POST['Nida']}',
-                                                    '{$_POST['emailAddress']}',
+                                                    '{$_POST['dob']}',
+                                                    '{$_POST['email']}',
+                                                    '{$_POST['contact']}',
+                                                    '{$_POST['email']}',
                                                     '".$password."',
-                                                    '{$_POST['Address']}',
-                                                    '{$_POST['phoneNumber']}',
-                                                    '{$_POST['emailAddress']}',
-                                                    '{$_POST['Akaunti']}',
-                                                    '{$_POST['Akaunti2']}',
-                                                    '{$_POST['Previlege']}',
-                                                    '{$passport}')";
+                                                    '{$_POST['station']}',
+                                                    '{$_POST['jobtitle']}')";
                         mysqli_query($connect, $sql);
 
-                        if (move_uploaded_file($temppassport, $folder.$passport))
+                        if ($sql)
                         {
                             
                                     $_SESSION['popup_code'] = "success";
-                                    $_SESSION['popup'] = "Umesajili Umefanikiwa";
-                                    header("location: index.php?p=members");
+                                    $_SESSION['popup'] = "New User Successful added";
+                                    header("location: index.php?p=usermanagement");
                                 
                         }
                         else{
                             $_SESSION['popup'] = "Failed, Try Again";
                             $_SESSION['popup_code'] = "error";
-                            header("location: index.php?p=members");
+                            header("location: index.php?p=usermanagement");
                         } 
 
                     }
@@ -247,54 +145,74 @@ if(isset($_GET["p"]))
     }
 	//END OF REGISTRATION PANEL
         //START EDIT MEMBER PANEL
-        elseif($page=="editmembersubmit")
+        elseif($page=="editUserSubmit")
         {
             
-                    if(isset($_POST['editbtnmemberregister']))
-                    {    
-                      $row;
-                      $folder ="passports/";
-                      $userid =$_POST['userid'];
-                      $firstname =$_POST['firstName'];
-                      $middlename =$_POST['middleName'];
-                      $lastname =$_POST['lastName'];
-                      $dob =$_POST['birthdayDate'];
-                      $gender =$_POST['gender'];
-                      $nida =$_POST['Nida'];
-                      $address =$_POST['Address'];  
-                      $phone =$_POST['phoneNumber']; 
-                      $email =$_POST['emailAddress']; 
-                      $Akaunti =$_POST['Akaunti']; 
-                      $Akaunti2 =$_POST['Akaunti2']; 
-                      $username =$_POST['emailAddress']; 
-                      $password =md5($_POST['lastName']); 
-                      $previlege =$_POST['Previlege'];  
-                      $passport =$_FILES["passport"]["name"];   
-                      $temppassport =$_FILES["passport"]["tmp_name"];
+            if(isset($_POST['userEBtn']))
+            {    
+              $superID =$_POST['superID'];
+              $firstname =$_POST['fname'];
+              $middlename =$_POST['mname'];
+              $lastname =$_POST['sname'];
+              $gender =$_POST['gender'];
+              $dob =$_POST['dob'];
+              $email =$_POST['email'];
+              $contact =$_POST['contact'];  
+              $station =$_POST['station']; 
+              $jobtitle =$_POST['jobtitle'];  
+              $username =$_POST['email']; 
+              $password =md5('Tanrail');   
 
-                      $sql="UPDATE members SET fname ='".$firstname."', mname ='".$middlename."', lname ='".$lastname."', bday ='".$dob."', gender ='".$gender."', nida ='".$nida."', login_name ='".$username."', password ='".$password."', address ='".$address."', contact ='".$phone."', email ='".$email."', akaunti_benki ='".$Akaunti."', akaunti2 ='".$Akaunti2."', previlege ='".$previlege."', passport ='".$passport."' WHERE user_id='".$userid."'";
+                      $sql="UPDATE supervisors SET fname ='".$firstname."', lname ='".$middlename."', sname ='".$lastname."', gender ='".$gender."', dob ='".$dob."', email ='".$email."', contact ='".$contact."', username ='".$username."', password ='".$password."', station ='".$station."', jobTitle ='".$jobtitle."' WHERE supervisor_id='".$superID."'";
                           
                             mysqli_query($connect, $sql);
     
-                            if (move_uploaded_file($temppassport, $folder.$passport))
+                            if ($sql)
                             {
                                 
                                         $_SESSION['popup_code'] = "success";
-                                        $_SESSION['popup'] = "Umefanikiwa Kurekebisha Taarifa";
-                                        header("location: index.php?p=members");
+                                        $_SESSION['popup'] = "New User Successful added";
+                                        header("location: index.php?p=usermanagement");
                                     
                             }
                             else{
                                 $_SESSION['popup'] = "Failed, Try Again";
                                 $_SESSION['popup_code'] = "error";
-                                header("location: index.php?p=members");
+                                header("location: index.php?p=usermanagement");
                             } 
-    
-                        }
+             }
                     
             
         }
         //END OF EDIT MEMBER PANEL
+        //DELETE USER
+        elseif($page=="deleteUserSubmit")
+        {
+            if(isset($_POST['userDBtn']))
+            {    
+                $superID =$_POST['superID'];
+
+                    $sql="DELETE FROM supervisors WHERE supervisor_id='".$superID."'";
+
+                    mysqli_query($connect, $sql);
+
+                    if ($sql)
+                        {
+                            
+                            $_SESSION['popup_code'] = "success";
+                            $_SESSION['popup'] = "User Successful Deleted";
+                            header("location: index.php?p=usermanagement");
+                                
+                        }
+                        else{
+                            $_SESSION['popup'] = "Failed, Try Again";
+                            $_SESSION['popup_code'] = "error";
+                            header("location: index.php?p=usermanagement");
+                        } 
+
+                }
+        }
+        //END DELETE USER
         //BADILI PASSWORD
         elseif($page=="badilipassword")
         {
@@ -304,267 +222,300 @@ if(isset($_GET["p"]))
                 $loginname =$_POST['loginname'];
                 $password =md5($_POST['password']); 
     
-                    $sql="UPDATE members SET password='".$password."' WHERE user_id='".$userid."'";
+                    $sql="UPDATE supervisors SET password='".$password."' WHERE supervisor_id='".$userid."'";
                     mysqli_query($connect, $sql);
     
                     if ($sql)
                     {
                         $_SESSION['popup_code'] = "success";
-                        $_SESSION['popup'] = "Umefanikiwa kubadili password";
-                        header("location: index.php?p=wasifuwangu");
+                        $_SESSION['popup'] = "You have successful change password";
+                        header("location: index.php?p=logout");
                     }
     
                 }
         }
     //BADILI PASSWORD
-    //START REGISTER FAMILY PANEL
-    elseif($page=="registerFamily")
-    {
-        
-                if(isset($_POST['registerFamilySubmit']))
-                {    
-                    $row;
-                    $folder ="passports/";
-                    $userid =$_POST['userid'];
-                    $name =$_POST['name'];
-                    $dob =$_POST['dob'];
-                    $contact =$_POST['contact'];
-                    $relation =$_POST['relation'];
-                    $passport =$_FILES["passport"]["name"];   
-                    $temppassport =$_FILES["passport"]["tmp_name"];   
 
-                            $sql = "INSERT INTO family(user_id, names, dob, contact, relation, passport)
-                                                VALUES (
-                                                        '{$_POST['userid']}',
-                                                        '{$_POST['name']}',
-                                                        '{$_POST['dob']}',
-                                                        '{$_POST['contact']}',
-                                                        '{$_POST['relation']}',
-                                                        '{$passport}')";
-                            mysqli_query($connect, $sql);
-
-                            if (move_uploaded_file($temppassport, $folder.$passport))
-                            {
-                                
-                                        $_SESSION['popup_code'] = "success";
-                                        $_SESSION['popup'] = "Umesajili kikamilifu Mwanafamilia";
-                                        header("location: index.php?p=members");
-                                    
-                            }
-                            else{
-                                $_SESSION['popup'] = "Failed, Try Again";
-                                $_SESSION['popup_code'] = "error";
-                                header("location: index.php?p=members");
-                            } 
-            }  
-        
-    }
-    //END OF REGISTER FAMILY
-
-     //SAJILI MRADI MPYA
-     elseif($page=="addnewMradi")
+     //ADD TRAIN
+     elseif($page=="AddTrainSubmit")
      {
-         
-        $row;
-        $jina =$_POST['jina'];
-        $eneo =$_POST['eneo'];
-        $thamani =$_POST['thamani'];
-        $image =$_FILES["picha"]["name"];
-        $tempimage =$_FILES["picha"]["tmp_name"];
-        
-        $folder ="uploads/";
+        if(isset($_POST['AddTrainBtn']))
+        { 
+            $trainno =$_POST['train_no'];
 
-              $sql = "INSERT INTO miradi(jina, eneo, thamani, picha)
-                                  VALUES (
-                                          '{$_POST['jina']}',
-                                          '{$_POST['eneo']}',
-                                          '{$_POST['thamani']}',
-                                          '{$image}')";
+              $sql = "INSERT INTO train(train_no) VALUES ('{$_POST['train_no']}')";
               mysqli_query($connect, $sql);
 
-              if (move_uploaded_file($tempimage, $folder.$image))
+              if ($sql)
               {
-                $_SESSION['popup'] = "Umefanikiwa kuongeza mradi mpya";
+                $_SESSION['popup'] = "You have Successful Added New Train";
                 $_SESSION['popup_code'] = "success";
-                header("location: index.php?p=miradi");
+                header("location: index.php?p=dashboard");
               }else {
                 $_SESSION['popup'] = "Failed, Please Try Again";
                 $_SESSION['popup_code'] = "error";
-                header("location: index.php?p=miradi");	
+                header("location: index.php?p=dashboard");	
             }
                  
-         
+        }
      }
-     //END OF SAJILI MRADI MPYA
-    //START WEKEZA MRADI
-    elseif($page=="mradiwekezo")
+     //END OF ADD TRAIN
+     //ADD COACH
+     elseif($page=="AddCoachSubmit")
+     {
+        if(isset($_POST['AddCoachBtn']))
+        { 
+            $coachno =$_POST['coach_no'];
+
+              $sql = "INSERT INTO coaches(coach_no) VALUES ('{$_POST['coach_no']}')";
+              mysqli_query($connect, $sql);
+
+              if ($sql)
+              {
+                $_SESSION['popup'] = "You have Successful Added New Coach";
+                $_SESSION['popup_code'] = "success";
+                header("location: index.php?p=dashboard");
+              }else {
+                $_SESSION['popup'] = "Failed, Please Try Again";
+                $_SESSION['popup_code'] = "error";
+                header("location: index.php?p=dashboard");	
+            }
+                 
+        }
+     }
+     //END OF ADD COACH
+     //ADD STATION
+     elseif($page=="AddStationSubmit")
+     {
+        if(isset($_POST['AddStationBtn']))
+        { 
+            $stationname =$_POST['station_name'];
+
+              $sql = "INSERT INTO stations(station_name) VALUES ('{$_POST['station_name']}')";
+              mysqli_query($connect, $sql);
+
+              if ($sql)
+              {
+                $_SESSION['popup'] = "You have Successful Added New Station";
+                $_SESSION['popup_code'] = "success";
+                header("location: index.php?p=dashboard");
+              }else {
+                $_SESSION['popup'] = "Failed, Please Try Again";
+                $_SESSION['popup_code'] = "error";
+                header("location: index.php?p=dashboard");	
+            }
+                 
+        }
+     }
+     //END OF ADD STATION
+
+     //CLAIMS AND COMMENT SUBMIT
+    elseif($page=="ClaimCommentSubmit")
     {
         
-                if(isset($_POST['submitwekezo']))
+                if(isset($_POST['claimBtn']))
                 {    
-                    $row;
-                    $folder ="lisitipdf/";
-                    $mradiid =$_POST['mradiid'];
-                    $thamani =$_POST['thamani'];
-                    $wekezo =$_POST['wekezo'];
-                    $lengo =$_POST['lengo'];
-                    $lisiti =$_FILES["lisiti"]["name"];   
-                    $templisiti =$_FILES["lisiti"]["tmp_name"];   
+                  $coment =$_POST['coment'];
+                  $supervisor =$_SESSION['userId'];
 
-                            $sql = "INSERT INTO wekezomiradi(mradi_id, thamani, wekezo_thamani, lisiti, lengo, tarehe)
-                                                VALUES (
-                                                        '{$_POST['mradiid']}',
-                                                        '{$_POST['thamani']}',
-                                                        '{$_POST['wekezo']}',
-                                                        '{$lisiti}',
-                                                        '{$_POST['lengo']}',
-                                                        now())";
-                            mysqli_query($connect, $sql);
-
-                            if (move_uploaded_file($templisiti, $folder.$lisiti))
-                            {
-                                
-                                        $_SESSION['popup_code'] = "success";
-                                        $_SESSION['popup'] = "Umefanikiwa Kuwasilisha";
-                                        header("location: index.php?p=miradi");
-                                    
-                            }
-                            else{
-                                $_SESSION['popup'] = "Failed, Try Again";
-                                $_SESSION['popup_code'] = "error";
-                                header("location: index.php?p=miradi");
-                            } 
-            }  
-        
-    }
-    //END OF WEKEZA MRADI
-    //START NYARAKA MRADI
-    elseif($page=="mradiNyaraka")
-    {
-        
-                if(isset($_POST['nyarakaSubmit']))
-                {    
-                    $row;
-                    $folder ="nyarakaMiradi/";
-                    $mradiid =$_POST['mradiid'];
-                    $jinanyaraka =$_POST['jinanyaraka'];
-                    $remark =$_POST['remark'];
-                    $nyaraka =$_FILES["nyaraka"]["name"];   
-                    $tempnyaraka =$_FILES["nyaraka"]["tmp_name"];   
-
-                            $sql = "INSERT INTO nyarakamiradi(mradi_id, jina_nyaraka, nyaraka, tarehe)
-                                                VALUES (
-                                                        '{$_POST['mradiid']}',
-                                                        '{$_POST['jinanyaraka']}',
-                                                        '{$nyaraka}',
-                                                        now())";
-                            mysqli_query($connect, $sql);
-
-                            if (move_uploaded_file($tempnyaraka, $folder.$nyaraka))
-                            {
-                                
-                                        $_SESSION['popup_code'] = "success";
-                                        $_SESSION['popup'] = "Umefanikiwa Kuwasilisha Nyaraka";
-                                        header("location: index.php?p=miradi");
-                                    
-                            }
-                            else{
-                                $_SESSION['popup'] = "Failed, Try Again";
-                                $_SESSION['popup_code'] = "error";
-                                header("location: index.php?p=miradi");
-                            } 
-            }  
-        
-    }
-    //END OF NYARAKA MRADI
-
-     //MAOMBI YA MKOPO
-    elseif($page=="maombiMkopo")
-    {
-        
-                if(isset($_POST['recodimkopo']))
-                {    
-                  $userid =$_POST['userid'];
-                  $jina =$_POST['jina'];
-                  $mkopo =$_POST['mkopo'];
-                  $riba =$_POST['riba'];
-                  $rejesho =$_POST['rejesho'];
-                  $tarehekuchukua =$_POST['tarehekuchukua'];
-                  $tarehekurudisha =$_POST['tarehekurudisha'];  
-                  $dhumuni =$_POST['dhumuni']; 
-                  $akaunti =$_POST['akaunti']; 
-
-                        $sql = "INSERT INTO mkopo(user_id, jina, kiasi_mkopo, riba, marejesho, tarehe_kuchukua, tarehe_kurudisha, dhumuni, benki, tarehe)
+                        $sql = "INSERT INTO claims(claim, submittedBy, date, PManswer, PCanswer, GManswer)
                                             VALUES (
-                                                    '{$_POST['userid']}',
-                                                    '{$_POST['jina']}',
-                                                    '{$_POST['mkopo']}',
-                                                    '{$_POST['riba']}',
-                                                    '{$_POST['rejesho']}',
-                                                    '{$_POST['tarehekuchukua']}',
-                                                    '{$_POST['tarehekurudisha']}',
-                                                    '{$_POST['dhumuni']}',
-                                                    '{$_POST['akaunti']}',
-                                                    now())";
+                                                    '{$_POST['coment']}',
+                                                    '{$supervisor}',
+                                                     now(),
+                                                    '',
+                                                    '',
+                                                    '')";
                         mysqli_query($connect, $sql);
 
                         if ($sql)
                         {
                             $_SESSION['popup_code'] = "success";
-                            $_SESSION['popup'] = "Umefanikiwa kuomba Mkopo";
-                            header("location: index.php?p=mikopo");
+                            $_SESSION['popup'] = "Claims & Comment Successful Received";
+                            header("location: index.php?p=claimAndComments");
                         }
 
                     }
                 
         
     }
-	//END OF MAOMBI YA MKOPO
-     //IDHINISHA MKOPO
-     elseif($page=="idhinishaMkopo")
+	//CLAIMS AND COMMENT SUBMIT
+        //PM ANSWER CLAIM
+        elseif($page=="PMAnswerClaim")
+        {
+            if(isset($_POST['PMansbtn']))
+            {    
+                $coment =$_POST['coment'];
+                $claimID =$_POST['claimID'];
+   
+                    $sql="UPDATE claims SET PManswer= '$coment' WHERE claim_id='".$claimID."'";
+                    mysqli_query($connect, $sql);
+                    if ($sql)
+                    {
+                        $_SESSION['popup_code'] = "success";
+                        $_SESSION['popup'] = "Answer successful Saved";
+                        header("location: index.php?p=claimAndComments");
+                    }
+   
+               }
+        }
+        //PM ANSWER CLAIM
+        //PC ANSWER CLAIM
+        elseif($page=="PCAnswerClaim")
+        {
+            if(isset($_POST['PCansbtn']))
+            {    
+                $coment =$_POST['coment'];
+                $claimID =$_POST['claimID'];
+   
+                    $sql="UPDATE claims SET PCanswer= '$coment' WHERE claim_id='".$claimID."'";
+                    mysqli_query($connect, $sql);
+                    if ($sql)
+                    {
+                        $_SESSION['popup_code'] = "success";
+                        $_SESSION['popup'] = "Answer successful Saved";
+                        header("location: index.php?p=claimAndComments");
+                    }
+   
+               }
+        }
+        //PC ANSWER CLAIM
+        //GM ANSWER CLAIM
+        elseif($page=="GMAnswerClaim")
+        {
+            if(isset($_POST['GMansbtn']))
+            {    
+                $coment =$_POST['coment'];
+                $claimID =$_POST['claimID'];
+   
+                    $sql="UPDATE claims SET GManswer= '$coment' WHERE claim_id='".$claimID."'";
+                    mysqli_query($connect, $sql);
+                    if ($sql)
+                    {
+                        $_SESSION['popup_code'] = "success";
+                        $_SESSION['popup'] = "Answer successful Saved";
+                        header("location: index.php?p=claimAndComments");
+                    }
+   
+               }
+        }
+        //GM ANSWER CLAIM
+     //PM DAILY CLEANLINESS APPROVAL
+     elseif($page=="DailyApprovePMSubmit")
      {
-         if(isset($_POST['idhinisha']))
+         if(isset($_POST['PMApproval']))
          {    
-             $mkopoid =$_POST['mkopoid'];
-             $mtiasahihi =$_POST['mtiasahihi'];
-             $remark =$_POST['remark'];
-             $sahihi =$_POST['sahihi'];
-             $jina =$_POST['jina'];
+             $refNo =$_POST['supervisionRef'];
 
-             if($mtiasahihi == 'Mwenyekiti'){
-                 $sql="UPDATE mkopo SET sahihi_mwenyekiti='".$sahihi."', remark='".$remark."' WHERE mkopo_id='".$mkopoid."'";
+                 $sql="UPDATE dailycleanliness SET approvalPM='1' WHERE supervisionRef='".$refNo."'";
                  mysqli_query($connect, $sql);
                  if ($sql)
                  {
                      $_SESSION['popup_code'] = "success";
-                     $_SESSION['popup'] = "Umeidhinisha Mkopo wa $jina";
-                     header("location: index.php?p=mikopo");
+                     $_SESSION['popup'] = "You have Successful Approve the report";
+                     header("location: index.php?p=cleanlinessAndSupervision");
                  }
-             }
-             elseif($mtiasahihi == 'Katibu'){
-                $sql="UPDATE mkopo SET sahihi_katibu='".$sahihi."', remark='".$remark."' WHERE mkopo_id='".$mkopoid."'";
-                mysqli_query($connect, $sql);
-                if ($sql)
-                {
-                    $_SESSION['popup_code'] = "success";
-                    $_SESSION['popup'] = "Umeidhinisha Mkopo wa $jina";
-                    header("location: index.php?p=mikopo");
-                }
-            }
-            elseif($mtiasahihi == 'Mhazini'){
-                $sql="UPDATE mkopo SET sahihi_hazina='".$sahihi."', remark='".$remark."' WHERE mkopo_id='".$mkopoid."'";
-                mysqli_query($connect, $sql);
-                if ($sql)
-                {
-                    $_SESSION['popup_code'] = "success";
-                    $_SESSION['popup'] = "Umeidhinisha Mkopo wa $jina";
-                    header("location: index.php?p=mikopo");
-                }
-            }
 
             }
      }
-     //IDHINISHA MKOPO
+     //PM DAILY CLEANLINESS APPROVAL
+     //PM INTERIOR CLEANLINESS APPROVAL
+     elseif($page=="VacuumApprovePMSubmit")
+     {
+         if(isset($_POST['PMApprovalV']))
+         {    
+             $refNo =$_POST['supervisionRef'];
+
+                 $sql="UPDATE interiorcleaning SET approvalPM='1' WHERE supervisionRef='".$refNo."'";
+                 mysqli_query($connect, $sql);
+                 if ($sql)
+                 {
+                     $_SESSION['popup_code'] = "success";
+                     $_SESSION['popup'] = "You have Successful Approve the report";
+                     header("location: index.php?p=cleanlinessAndSupervision");
+                 }
+
+            }
+     }
+     //PM INTERIOR CLEANLINESS APPROVAL
+     //PM FUMIGATION CLEANLINESS APPROVAL
+     elseif($page=="FumigationApprovePMSubmit")
+     {
+         if(isset($_POST['PMApprovalF']))
+         {    
+             $refNo =$_POST['supervisionRef'];
+
+                 $sql="UPDATE fumigation SET approvalPM='1' WHERE supervisionRef='".$refNo."'";
+                 mysqli_query($connect, $sql);
+                 if ($sql)
+                 {
+                     $_SESSION['popup_code'] = "success";
+                     $_SESSION['popup'] = "You have Successful Approve the report";
+                     header("location: index.php?p=cleanlinessAndSupervision");
+                 }
+
+            }
+     }
+     //PM FUMIGATION CLEANLINESS APPROVAL
+
+     //PC DAILY CLEANLINESS APPROVAL
+     elseif($page=="DailyApprovePCSubmit")
+     {
+         if(isset($_POST['PCApproval']))
+         {    
+             $refNo =$_POST['supervisionRef'];
+
+                 $sql="UPDATE dailycleanliness SET ApprovalPC='1' WHERE supervisionRef='".$refNo."'";
+                 mysqli_query($connect, $sql);
+                 if ($sql)
+                 {
+                     $_SESSION['popup_code'] = "success";
+                     $_SESSION['popup'] = "You have Successful Approve the report";
+                     header("location: index.php?p=cleanlinessAndSupervision");
+                 }
+
+            }
+     }
+     //PC DAILY CLEANLINESS APPROVAL
+     //PC INTERIOR CLEANLINESS APPROVAL
+     elseif($page=="VacuumApprovePCSubmit")
+     {
+         if(isset($_POST['PCApprovalV']))
+         {    
+             $refNo =$_POST['supervisionRef'];
+
+                 $sql="UPDATE interiorcleaning SET approvalPC='1' WHERE supervisionRef='".$refNo."'";
+                 mysqli_query($connect, $sql);
+                 if ($sql)
+                 {
+                     $_SESSION['popup_code'] = "success";
+                     $_SESSION['popup'] = "You have Successful Approve the report";
+                     header("location: index.php?p=cleanlinessAndSupervision");
+                 }
+
+            }
+     }
+     //PC INTERIOR CLEANLINESS APPROVAL
+     //PC FUMIGATION CLEANLINESS APPROVAL
+     elseif($page=="FumigationApprovePCSubmit")
+     {
+         if(isset($_POST['PCApprovalF']))
+         {    
+             $refNo =$_POST['supervisionRef'];
+
+                 $sql="UPDATE fumigation SET approvalPC='1' WHERE supervisionRef='".$refNo."'";
+                 mysqli_query($connect, $sql);
+                 if ($sql)
+                 {
+                     $_SESSION['popup_code'] = "success";
+                     $_SESSION['popup'] = "You have Successful Approve the report";
+                     header("location: index.php?p=cleanlinessAndSupervision");
+                 }
+
+            }
+     }
+     //PC FUMIGATION CLEANLINESS APPROVAL
+
      //LIPA MKOPO ULIOMBWA KWA MKOPAJI
     elseif($page=="LipaMkopo")
     {

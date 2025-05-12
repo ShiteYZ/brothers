@@ -11,24 +11,24 @@
 					<div class="panel-body py-4">
 						<!----------------- /members display dash ------------------------------------->
 									<div class="row justify-content-center align-items-center h-100">
-										<div class="col-12">
+										<div class="col-md-12">
 											<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
 												<div class="card-body">
 													<fieldset>
-																<legend>RIPOTI ZETU</legend>
+																<legend>REPORTS</legend>
 																	<div class="row">
-																		<!------------------- RIPOTI MICHANGO YA ADA---------------------------->
-																			<div class="col-4 py-4">
+																		<!------------------- DAILY CLEANLINESS REPORT---------------------------->
+																			<div class="col-md-4 py-4">
 																				<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-																					<div class="card-header bg-default" style="border-radius: 15px; background-color:#90CFCF">
+																					<div class="card-header bg-default" style="border-radius: 15px; background-color: #FFA500">
 
 																						<div class="row">
 																								<div class="col-md-8">
-																									<i class="fa fa-angle-double-right"></i>	Ripoti Michango ya Ada
+																									<i class="fa fa-angle-double-right"></i>	Daily Cleanliness Report
 																								</div>
 																								<div class="offset-md-2 col-md-2">
 																									<div class="input-group">
-																										<form class="form-horizontal" action="ripoti/michangoAdaExcelReport.php" method="post">
+																										<form class="form-horizontal" action="reports/DailyCleanExcelReport.php" method="post">
 																											<button type="submit" name="xlsreport" class="btn btn-primary bg-white rounded-pill" type="button">
 																														<i class="fa fa-file-excel-o"></i>
 																											</button> 
@@ -40,7 +40,7 @@
 																					</div> <!--/panel-->
 																					<div class="card-body">
 																						<!------RIPOTI BODY------------>
-																							<form class="form-horizontal" action="ripoti/michangoAdaReport.php" method="post" id="michangoAdaReport">
+																							<form class="form-horizontal" action="reports/dailCleanliness.php" method="post" id="dailCleanlinessReport">
 
 																								<div class="col-md-12 mb-12 py-2">
 																									<div class="input-group">
@@ -61,7 +61,7 @@
 																								</div>
 
 																									<div class="offset-md-8 col-md-4">
-																									<button type="submit" class="btn btn-primary rounded-pill" name="generateReportBtn" id="generateReportBtn"> <i class="glyphicon glyphicon-ok-sign"></i> Vuta Ripoti</button>
+																									<button type="submit" class="btn btn rounded-pill" name="generateReportBtn" id="generateReportBtn" style="background-color: #692d2c;color:white;"> <i class="glyphicon glyphicon-ok-sign"></i> Generate report</button>
 																									</div>
 
 																							</form>
@@ -69,19 +69,19 @@
 																					</div>
 																				</div>
 																			</div> 
-																		<!---------------------RIPOTI MICHANGO YA ADA ------------------------->	
-																		<!------------------- RIPOTI MICHANGO MFUKO WA MAENDELEO---------------------------->
-																		<div class="col-4 py-4">
+																		<!---------------------DAILY CLEANLINESS REPORT- ------------------------->	
+																		<!------------------- VACUUM REPORT---------------------------->
+																		<div class="col-md-4 py-4">
 																				<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-																					<div class="card-header bg-default" style="border-radius: 15px; background-color:#90CFCF">
+																					<div class="card-header bg-default" style="border-radius: 15px; background-color: #FFA500">
 																						
 																						<div class="row">
 																								<div class="col-md-8">
-																									<i class="fa fa-angle-double-right"></i>	Ripoti Michango ya Mfuko wa Maendeleo
+																									<i class="fa fa-angle-double-right"></i>	Interior and Vacuum Cleaning Report
 																								</div>
 																								<div class="offset-md-2 col-md-2">
 																									<div class="input-group">
-																										<form class="form-horizontal" action="ripoti/michangoMfukoExcelReport.php" method="post">
+																										<form class="form-horizontal" action="reports/vacuumExcelReport.php" method="post">
 																											<button type="submit" name="xlsreport" class="btn btn-primary bg-white rounded-pill" type="button">
 																														<i class="fa fa-file-excel-o"></i>
 																											</button> 
@@ -93,7 +93,7 @@
 																					</div> <!--/panel-->
 																					<div class="card-body">
 																						<!------RIPOTI BODY------------>
-																							<form class="form-horizontal" action="ripoti/michangoMfukoReport.php" method="post" id="michangoMfukoReportForm">
+																							<form class="form-horizontal" action="reports/vacuumReporting.php" method="post" id="vacuumReportingForm">
 
 																								<div class="col-md-12 mb-12 py-2">
 																									<div class="input-group">
@@ -114,7 +114,7 @@
 																								</div>
 
 																									<div class="offset-md-8 col-md-4">
-																									<button type="submit" class="btn btn-primary rounded-pill" name="generateReportBtn" id="generateReportBtn"> <i class="glyphicon glyphicon-ok-sign"></i> Vuta Ripoti</button>
+																									<button type="submit" class="btn btn rounded-pill" name="generateReportBtn" id="generateReportBtn" style="background-color: #692d2c;color:white;"> <i class="glyphicon glyphicon-ok-sign"></i> Generate Report</button>
 																									</div>
 
 																							</form>
@@ -123,17 +123,17 @@
 																				</div>
 																			</div> 
 																		<!---------------------RIPOTI MICHANGO MFUKO WA MAENDELEO------------------------->	
-																		<!------------------- RIPOTI MIKOPO--------------------------->
-																		<div class="col-4 py-4">
+																		<!------------------- FUMIGATION REPORT--------------------------->
+																		<div class="col-md-4 py-4">
 																				<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-																				<div class="card-header bg-default" style="border-radius: 15px; background-color:#90CFCF">
+																				<div class="card-header bg-default" style="border-radius: 15px; background-color: #FFA500">
 																						<div class="row">
 																								<div class="col-md-8">
-																									<i class="fa fa-angle-double-right"></i>	Ripoti Mikopo
+																									<i class="fa fa-angle-double-right"></i> Fumigation Report
 																								</div>
 																								<div class="offset-md-2 col-md-2">
 																									<div class="input-group">
-																										<form class="form-horizontal" action="ripoti/mikopoExcelReport.php" method="post">
+																										<form class="form-horizontal" action="reports/fumigationExcelReport.php" method="post">
 																											<button type="submit" name="xlsreport" class="btn btn-primary bg-white rounded-pill" type="button">
 																														<i class="fa fa-file-excel-o"></i>
 																											</button> 
@@ -145,7 +145,7 @@
 																					</div> <!--/panel-->
 																					<div class="card-body">
 																						<!------RIPOTI BODY------------>
-																							<form class="form-horizontal" action="ripoti/mikopoReport.php" method="post" id="mikopoReportForm">
+																							<form class="form-horizontal" action="reports/fumigationReporting.php" method="post" id="fumigationReportingForm">
 
 																								<div class="col-md-12 mb-12 py-2">
 																									<div class="input-group">
@@ -166,7 +166,7 @@
 																								</div>
 
 																									<div class="offset-md-8 col-md-4">
-																									<button type="submit" class="btn btn-primary rounded-pill" name="generateReportBtn" id="generateReportBtn"> <i class="glyphicon glyphicon-ok-sign"></i> Vuta Ripoti</button>
+																									<button type="submit" class="btn btn rounded-pill" name="generateReportBtn" id="generateReportBtn" style="background-color: #692d2c;color:white;"> <i class="glyphicon glyphicon-ok-sign"></i> Generate Report</button>
 																									</div>
 
 																							</form>
@@ -174,111 +174,7 @@
 																					</div>
 																				</div>
 																			</div> 
-																		<!---------------------RIPOTI MIKOPO------------------------->	
-																		<!------------------- RIPOTI MIRADI--------------------------->
-																		<div class="col-4 py-4">
-																				<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-																				<div class="card-header bg-default" style="border-radius: 15px; background-color:#90CFCF">
-																						<div class="row">
-																								<div class="col-md-8">
-																									<i class="fa fa-angle-double-right"></i>	Ripoti Miradi
-																								</div>
-																								<div class="offset-md-2 col-md-2">
-																									<div class="input-group">
-																										<form class="form-horizontal" action="ripoti/miradiExcelReport.php" method="post">
-																											<button type="submit" name="xlsreport" class="btn btn-primary bg-white rounded-pill" type="button">
-																														<i class="fa fa-file-excel-o"></i>
-																											</button> 
-																										</form> 
-																									</div>
-																								</div>
-																						</div>
-
-																					</div> <!--/panel-->
-																					<div class="card-body">
-																						<!------RIPOTI BODY------------>
-																							<form class="form-horizontal" action="ripoti/miradiReport.php" method="post" id="miradiReportForm">
-
-																								<div class="col-md-12 mb-12 py-2">
-																									<div class="input-group">
-																										<div class="input-group-append">
-																											<span class="input-group-text">Start Date 
-																										</div>
-																										<input type="text" class="form-control" id="startDateMiradi" name="startDateMiradi" placeholder="Start Date" autocomplete="off" />
-																									</div>
-																								</div>
-
-																								<div class="col-md-12 mb-12 py-2">
-																									<div class="input-group">
-																										<div class="input-group-append">
-																											<span class="input-group-text">End Date 
-																										</div>
-																										<input type="text" class="form-control" id="endDateMiradi" name="endDateMiradi" placeholder="End Date" autocomplete="off" />
-																									</div>
-																								</div>
-
-																									<div class="offset-md-8 col-md-4">
-																									<button type="submit" class="btn btn-primary rounded-pill" name="generateReportBtn" id="generateReportBtn"> <i class="glyphicon glyphicon-ok-sign"></i> Vuta Ripoti</button>
-																									</div>
-
-																							</form>
-																						<!-------RIPOTI BODY----------->
-																					</div>
-																				</div>
-																			</div> 
-																		<!---------------------RIPOTI MIRADI------------------------->	
-																		<!------------------- RIPOTI MATUMIZI--------------------------->
-																		<div class="col-4 py-4">
-																				<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-																				<div class="card-header bg-default" style="border-radius: 15px; background-color:#90CFCF">
-																						<div class="row">
-																								<div class="col-md-8">
-																									<i class="fa fa-angle-double-right"></i>	Ripoti Matumizi
-																								</div>
-																								<div class="offset-md-2 col-md-2">
-																									<div class="input-group">
-																										<form class="form-horizontal" action="ripoti/matumiziExcelReport.php" method="post">
-																											<button type="submit" name="xlsreport" class="btn btn-primary bg-white rounded-pill" type="button">
-																														<i class="fa fa-file-excel-o"></i>
-																											</button> 
-																										</form> 
-																									</div>
-																								</div>
-																						</div>
-
-																					</div> <!--/panel-->
-																					<div class="card-body">
-																						<!------RIPOTI BODY------------>
-																							<form class="form-horizontal" action="ripoti/matumiziReport.php" method="post" id="matumiziReportForm">
-
-																								<div class="col-md-12 mb-12 py-2">
-																									<div class="input-group">
-																										<div class="input-group-append">
-																											<span class="input-group-text">Start Date 
-																										</div>
-																										<input type="text" class="form-control" id="startDateMatumizi" name="startDateMatumizi" placeholder="Start Date" autocomplete="off" />
-																									</div>
-																								</div>
-
-																								<div class="col-md-12 mb-12 py-2">
-																									<div class="input-group">
-																										<div class="input-group-append">
-																											<span class="input-group-text">End Date 
-																										</div>
-																										<input type="text" class="form-control" id="endDateMatumizi" name="endDateMatumizi" placeholder="End Date" autocomplete="off" />
-																									</div>
-																								</div>
-
-																									<div class="offset-md-8 col-md-4">
-																									<button type="submit" class="btn btn-primary rounded-pill" name="generateReportBtn" id="generateReportBtn"> <i class="glyphicon glyphicon-ok-sign"></i> Vuta Ripoti</button>
-																									</div>
-
-																							</form>
-																						<!-------RIPOTI BODY----------->
-																					</div>
-																				</div>
-																			</div> 
-																		<!---------------------RIPOTI MATUMIZI------------------------->	
+																		<!---------------------FUMIGATION REPORT------------------------->	
 																	</div>		
 													</fieldset>
 

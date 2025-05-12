@@ -1,7 +1,7 @@
 
-      <footer class="bg-primary text-center text-lg-start text-white fixed-bottom">
-              <div class="text-center p-1" style="background-color: #47B0AF">
-                © <?php print date('Y'); ?> Copyright: Best Brothers Group
+<footer class="bg-primary text-center text-lg-start text-white fixed-bottom">
+              <div class="text-center p-1" style="background-color: #692d2c">
+                © <?php print date("Y"); ?> Copyright: Tanrail Investiment Limited
               </div>
               <!-- Copyright -->
         </footer>

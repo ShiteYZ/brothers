@@ -12,8 +12,8 @@ $(document).ready(function() {
 	$("#endDateMiradi").datepicker();
 	$("#endDateMatumizi").datepicker();
 
-	////////////////////////////////////MICHANGO ADA
-	$("#michangoAdaReport").unbind('submit').bind('submit', function() {
+	////////////////////////////////////DAILY CLEANLINESS
+	$("#dailCleanlinessReport").unbind('submit').bind('submit', function() {
 		
 		var startDate = $("#startDate").val();
 		var endDate = $("#endDate").val();
@@ -47,8 +47,8 @@ $(document).ready(function() {
 				dataType: 'text',
 				success:function(response) {
 					//$("#michangoAdaReport").html(response);
-					var mywindow = window.open('', 'Best Brothers Management System', 'height=400,width=600');
-	        mywindow.document.write('<html><head><title>Ripoti Malipo Michango ya Ada</title>');        
+					var mywindow = window.open('', 'TANRAIL INVESTMENTS LIMITED', 'height=400,width=600');
+	        mywindow.document.write('<html><head><title>Daily Cleanliness Report</title>');        
 	        mywindow.document.write('</head><body>');
 	        mywindow.document.write(response);
 	        mywindow.document.write('</body></html>');
@@ -66,8 +66,8 @@ $(document).ready(function() {
 		return false;
 	});
 
-		////////////////////////////////////MICHANGO MFUKO WA MAENDELEO
-		$("#michangoMfukoReportForm").unbind('submit').bind('submit', function() {
+		////////////////////////////////////VACUUM CLEANING
+		$("#vacuumReportingForm").unbind('submit').bind('submit', function() {
 		
 			var startDateM = $("#startDateM").val();
 			var endDateM = $("#endDateM").val();
@@ -100,8 +100,8 @@ $(document).ready(function() {
 					data: form.serialize(),
 					dataType: 'text',
 					success:function(response) {
-						var mywindow = window.open('', 'Best Brothers Management System', 'height=400,width=600');
-				mywindow.document.write('<html><head><title>Ripoti Michango mfuko wa Maendeleo</title>');        
+						var mywindow = window.open('', 'TANRAIL INVESTMENTS LIMITED', 'height=400,width=600');
+	        	mywindow.document.write('<html><head><title>Interior and Vacuum Cleanliness Report</title>');        
 				mywindow.document.write('</head><body>');
 				mywindow.document.write(response);
 				mywindow.document.write('</body></html>');
@@ -119,8 +119,8 @@ $(document).ready(function() {
 			return false;
 		});
 
-	////////////////////////////////////MIKOPO REPORT
-	$("#mikopoReportForm").unbind('submit').bind('submit', function() {
+	////////////////////////////////////FUMIGATION REPORT
+	$("#fumigationReportingForm").unbind('submit').bind('submit', function() {
 		
 		var startDateMk = $("#startDateMk").val();
 		var endDateMk = $("#endDateMk").val();
@@ -153,8 +153,8 @@ $(document).ready(function() {
 				data: form.serialize(),
 				dataType: 'text',
 				success:function(response) {
-					var mywindow = window.open('', 'Best Brothers Management System', 'height=400,width=600');
-			mywindow.document.write('<html><head><title>Ripoti ya Mikopo Iliyotolewa</title>');        
+					var mywindow = window.open('', 'TANRAIL INVESTMENTS LIMITED', 'height=400,width=600');
+			mywindow.document.write('<html><head><title>Fumigation Report</title>');        
 			mywindow.document.write('</head><body>');
 			mywindow.document.write(response);
 			mywindow.document.write('</body></html>');
